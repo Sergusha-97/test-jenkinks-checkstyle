@@ -30,8 +30,11 @@ dependencies {
 }
 */
 
-plugins {
-    id 'checkstyle'
+apply plugin: 'java'
+apply plugin: 'checkstyle'
+
+checkstyle {
+    configFile = rootProject.file('config/checkstyle/checkstyle.xml')
 }
 
 tasks.withType(Checkstyle) {
